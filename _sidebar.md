@@ -14,3 +14,6 @@
   - [Day06](./Work/Web-API/Web%20APIs%20%E7%AC%AC%E5%85%AD%E5%A4%A9%20%E6%AD%A3%E5%88%99%26%E9%98%B6%E6%AE%B5%E6%A1%88%E4%BE%8B.md)
   - [阶段案例](./Work/Web-API/阶段案例（小兔鲜）.md)
   - [放大镜效果](./Work/Web-API/放大镜效果.md)
+
+- JavaScript高级
+  - [Day01](./Work/JavaScript%E9%AB%98%E7%BA%A7/JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F%26%E8%A7%A3%E6%9E%84%26%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.md)
