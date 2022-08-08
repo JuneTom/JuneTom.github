@@ -15,5 +15,13 @@
   - [阶段案例](./Work/Web-API/阶段案例（小兔鲜）.md)
   - [放大镜效果](./Work/Web-API/放大镜效果.md)
 
+-Echarts
+  - [Day01](./Work/Echarts/01%20%E7%AC%94%E8%AE%B0/01-echarts.md)
+  - [Day02]
+    - [Day02-1](./Work/Echarts/02%20笔记/01%20Github访问.md)
+    - [Day02-2](./Work/Echarts/02%20%E7%AC%94%E8%AE%B0/02%20%E7%BD%91%E7%BB%9C%E5%90%8D%E8%AF%8D%20DNS%E8%A7%A3%E6%9E%90%E7%AD%89.md)
+    - [Day02-3](./Work/Echarts/02%20%E7%AC%94%E8%AE%B0/02-echarts.md)
+  - [Day03](./Work/Echarts/03%20笔记/Echarts.md)
+
 - JavaScript高级
   - [Day01](./Work/JavaScript%E9%AB%98%E7%BA%A7/JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F%26%E8%A7%A3%E6%9E%84%26%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.md)

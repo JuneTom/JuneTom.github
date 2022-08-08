@@ -1103,3 +1103,897 @@ JS初学者经常花很多时间才能习惯变量提升，还经常出现一些
 
 ![image-20220807102046391](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220807102046391.png)
 
+## 三、解构赋值
+
+**解构赋值是一种快速为变量赋值的简洁语法，本质上仍然是为变量赋值。**
+
+
+
+### 1.数组解构
+
+**数组解构是将数组的单元值快速批量赋值给一系列变量的简洁语法。**
+
+#### 1.1基本语法：
+
+1. 赋值运算符 = 左侧的 [] 用于批量声明变量，右侧数组的单元值将被赋值给左侧的变量
+2. 变量的顺序对应数组单元值的位置依次进行赋值操作
+
+![image-20220808193001163](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808193001163.png)
+
+#### 1.2典型应用交互2个变量
+
+![image-20220808193107592](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808193107592.png)
+
+#### 1.3 js 前面必须加分号情况
+
+![image-20220808193130235](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808193130235.png)
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ES5 为变量赋值，只能直接指定值
+      // let a = 1
+      // let b = 1
+      // let c = 1
+
+      // ES6 解构赋值
+      let [a, b, c] = [1, 2, 3]
+      console.log(a, b, c) // 从数组中提取值，按照对应的位置，对变量赋值
+      const arr = [100, 60, 80]
+      const [max, min, avg] = arr
+      console.log(max, min, avg) // 交换两个变量
+
+      let e = 4
+      let f = 8 // ES6 解构赋值 交换两个变量
+      ;[f, e] = [e, f]
+      console.log(e, f) // 注意 [] 前面需要加分号; // 需要加分号的情况 // 1.() 立即执行函数 // 2.[] 数组 // 得到一个新数组，新数组的元素的平方
+      const arr1 = [1, 2, 3]
+      const res = arr1.map((x) => x * x)
+      console.log(res) // const res = arr1.map(function(x) { //     return x * x // }) // console.log(res)
+      ;[1, 2, 3].forEach((item) => {
+        console.log(item)
+      })
+    </script>
+  </body>
+</html>
+
+```
+
+#### 1.4解构赋值细节
+
+![image-20220808193936986](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808193936986.png)
+
+![image-20220808193947082](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808193947082.png)
+
+![image-20220808193957087](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808193957087-16599587978191.png)
+
+![image-20220808194009163](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808194009163.png)
+
+![image-20220808194016538](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808194016538.png)
+
+![image-20220808194025600](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808194025600.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.变量多，数组元素很少
+      // const [a, b, c, d] = [1, 2, 3]  // d undefined
+      // console.log(a, b, c, d)
+
+      // 2.变量少，数组元素多
+      // const [a, b] = [1, 2, 3, 4, 5]
+      // console.log(a, b)
+
+      // 3.变量少， 数组元素多，可以利用剩余参数接收多余的元素
+      // const [a, b, ...c] = [1, 2, 3, 4, 5]
+      // console.log(a, b, c)
+
+      // 4.按照对应的位置， 依次对变量赋值
+      // const [a, b, , d] = [1, 2, 3, 4]
+      // console.log(a, b, d)
+
+      // 5.解构赋值允许指定默认值
+      // const [a = 0, b = 0] = [1, 2]
+      // console.log(a, b)
+
+      // 当数组对应位置不存在 或者 严格等于undefined时，默认值才生效
+      // const [a = 0, b = 0] = []
+
+      // 引号包起来的都是字符串 ==> '1'  'null'
+      const [a = 0, b = 1] = ['undefined', undefined]
+      console.log(a) // undefined
+      console.log(b) // 1
+      // 6.如果等号右边不是数组（不可遍历数组的结构），那么会报错
+      // let [foo] = 1
+      // let [foo] = false
+      // let [foo] = NaN
+      // let [foo] = null
+      // let [foo] = undefined
+      // let [foo] = {}
+      //1. 变量的数量大于单元值数量时，多余的变量将被赋值为？
+	  // undefined
+	  //2. 变量的数量小于单元值数量时，可以通过什么剩余获取所有的值？
+	  // 剩余参数... 获取剩余单元值，但只能置于最末位
+  
+    </script>
+  </body>
+</html>
+
+```
+
+#### 1.5多维数组
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 多维数组： 数组嵌套数组
+      const arr = [1, 2, [3, 4]] // 二维数组
+      console.log([arr[2]])
+      console.log(arr[2][0])
+      console.log(arr[2][1]) // 多维数组的解析
+
+      const arr1 = [1, 2, [3, 4]] // const [a, b, c] = arr1 // console.log(a, b, c)
+      const [a, b, [c, d]] = [1, 2, [3, 4]]
+      console.log(a, b, c, d)
+    </script>
+  </body>
+</html>
+
+```
+
+#### 1.6总结
+
+![image-20220808193359793](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808193359793.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 本质上, 解构赋值的写法属于模式匹配, 只要等号两边的模式相同
+      // 左边的变量就会被赋予对应的值
+      let [foo, [[bar], baz]] = [1, [[2], 3]]
+      console.log(foo, bar, baz)
+
+      let [, , third] = ['foo', 'bar', 'baz']
+      console.log(third)
+
+      // let [x, , y] = [1, 2, 3]
+      // console.log(x, y)
+
+      let [head, ...tail] = [1, 2, 3, 4]
+      console.log(head, tail)
+
+      let [x, y, ...z] = ['a']
+      console.log(x) // 'a'
+      console.log(y) // undefined
+      console.log(z) // []
+
+      let [fn] = [] //
+      console.log(fn) // undefined
+      let [fn1, fn2] = [1]
+      console.log(fn1, fn2) // 1, undefined
+    </script>
+  </body>
+</html>
+
+```
+
+#### 1.7练习(独立完成数组解构赋值)
+
+![image-20220808193655890](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808193655890.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const pc = ['惠普', '联想', '苹果', '小米']
+      const [hp, lx, ap, mi] = pc
+      console.log(hp, lx, ap, mi)
+
+      function getValue() {
+        return [100, 60]
+      }
+      const [max, min] = getValue()
+      console.log(max, min)
+    </script>
+  </body>
+</html>
+
+```
+
+
+
+### 2.对象解构
+
+**对象解构是将对象属性和方法快速批量赋值给一系列变量的简洁语法**
+
+#### 2.1. 基本语法
+
+1. 赋值运算符 = 左侧的 {} 用于批量声明变量，右侧对象的属性值将被赋值给左侧的变量 
+1.  对象属性的值将被赋值给与属性名相同的变量 
+1.  注意解构的变量名不要和外面的变量名冲突否则报错 
+1. 对象中找不到与变量名一致的属性时变量值为 undefined
+
+![image-20220808194243907](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808194243907.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            uname:'周杰伦',
+            age: 18
+        }
+        // obj.uname 
+        // obj.age
+
+        // >>> 数组的解构 按着位置依次赋值  []
+
+        // 对象的解构, 是按着属性名解构， 可以交换位置。
+
+        //==> 要求变量名必须和属性名一致才可以解构
+        const {age, uname} = { uname:'周杰伦', age: 18 }
+        
+        // 等价于 const age = obj.age
+        console.log(uname, age)
+
+    </script>
+</body>
+</html>
+```
+
+
+
+#### 2.2给新的变量名赋值：
+
+ 可以从一个对象中提取变量并同时修改新的变量名
+
+![image-20220808194311520](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808194311520.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 对象的解构赋值， 可以重新命名
+        // 旧变量名: 新变量名
+
+        // const {uname:username, age} = {uname:'周杰伦', age: 18}
+
+        // console.log(username, age)
+
+        // const obj = {first:'Hello', last: 'world'}
+        // const {first: f, last: l} = obj
+        
+        // console.log(f, l )
+
+        // 结论: 
+        // 对象解构的内部机制, 是先找到同名属性
+        // 然后再赋值给对应的变量, 真正被赋值的是冒号后面那个.
+
+        // 2. 解构数组对象
+        // const pig = [
+        //     {
+        //         uname:'佩奇',
+        //         age: 6
+        //     }
+        // ]
+        // const [{uname, age}] = pig
+
+        // console.log(uname, age)
+        
+
+        // 练习 
+        // 1. 
+        const pig = {name:'佩奇', age: 6}
+        // const {name, age} = pig
+        console.log(name, age)
+        // 2. 
+        const {name:uname, age} = pig
+        // 3. 
+        const goods = [{
+            goodsName:'小米',
+            price: 1999
+        }]
+        const [{goodsName, price}] = goods
+
+        </script>
+</body>
+</html>
+```
+
+
+
+#### 2.3数组对象解构
+
+![image-20220808194401807](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808194401807.png)
+
+#### 2.4练习
+
+![image-20220808194426311](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808194426311.png)
+
+```js
+ 		<script>
+ 		// 练习 
+        // 1. 
+        const pig = {name:'佩奇', age: 6}
+        // const {name, age} = pig
+        console.log(name, age)
+        // 2. 
+        const {name:uname, age} = pig
+        // 3. 
+        const goods = [{
+            goodsName:'小米',
+            price: 1999
+        }]
+        const [{goodsName, price}] = goods
+
+        </script>
+```
+
+#### 2.5 多级对象解构
+
+![image-20220808201454521](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808201454521.png)
+
+![image-20220808201544018](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808201544018.png)
+
+![image-20220808201552916](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808201552916.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const pig = {
+        //     name: '佩奇',
+        //     family: {
+        //         mother: '猪妈妈',
+        //         father: '猪爸爸',
+        //         sister: '乔治'
+        //     },
+        //     age: 6
+        // }
+
+        // 多级对象的解构
+        // name , mother, father, sister
+        // const {name, family} = pig  // 单独解构family
+        // console.log(name, family)
+        // const {name, family:{mother, father, sister}} = pig
+        // console.log(family)
+        // console.log(name,mother, father, sister)
+
+
+
+        // 思考 2
+        const pig = [{
+            name: '佩奇',
+            family: {
+                mother: '猪妈妈',
+                father: '猪爸爸',
+                sister: '乔治'
+            },
+            age: 6
+        }]
+
+        // 冒号左边的family不是解构， 是模式匹配， 匹配到pig里面family。
+        const [{name, family:{mother, father, sister}}] = pig
+
+
+    </script>
+</body>
+</html>
+```
+
+
+
+#### 2.6多级对象解构案例
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 这是后台传递过来的数据
+    const msg = {
+      "code": 200,
+      "msg": "获取新闻列表成功",
+      "data": [
+        {
+          "id": 1,
+          "title": "5G商用自己，三大运用商收入下降",
+          "count": 58
+        },
+        {
+          "id": 2,
+          "title": "国际媒体头条速览",
+          "count": 56
+        },
+        {
+          "id": 3,
+          "title": "乌克兰和俄罗斯持续冲突",
+          "count": 1669
+        },
+
+      ]
+    }
+
+    // 需求1： 请将以上msg对象  采用对象解构的方式 只选出  data 方面后面使用渲染页面
+    const { data } = msg
+    console.log(data)
+
+    // 需求2： 上面msg是后台传递过来的数据，我们需要把data选出当做参数传递给 函数
+    function render({ data }) {
+      // 我们只要 data 数据
+      // 内部处理
+      console.log(data)
+    }
+    render(msg)
+
+    // 需求3， 为了防止msg里面的data名字混淆，要求渲染函数里面的数据名改为 myData
+    function render({ data: myData }) {
+      // 要求将 获取过来的 data数据 更名为 myData
+      // 内部处理
+      console.log(myData);
+    }
+    render(msg)
+
+
+  </script>
+</body>
+
+</html>
+```
+
+#### 2.7渲染商品列表案例
+
+![image-20220808201750923](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808201750923.png)
+
+![image-20220808201743142](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808201743142.png)
+
+![image-20220808201717193](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808201717193.png)
+
+![image-20220808201726636](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808201726636.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品渲染</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .list {
+      width: 990px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 100px;
+    }
+
+    .item {
+      width: 240px;
+      margin-left: 10px;
+      padding: 20px 30px;
+      transition: all .5s;
+      margin-bottom: 20px;
+    }
+
+    .item:nth-child(4n) {
+      margin-left: 0;
+    }
+
+    .item:hover {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      transform: translate3d(0, -4px, 0);
+      cursor: pointer;
+    }
+
+    .item img {
+      width: 100%;
+    }
+
+    .item .name {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .item .price {
+      font-size: 22px;
+      color: firebrick;
+    }
+
+    .item .price::before {
+      content: "¥";
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="list">
+    <!-- <div class="item">
+      <img src="" alt="">
+      <p class="name"></p>
+      <p class="price"></p>
+    </div> -->
+  </div>
+  <script>
+    const goodsList = [
+      {
+        id: '4001172',
+        name: '称心如意手摇咖啡磨豆机咖啡豆研磨机',
+        price: '289.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/84a59ff9c58a77032564e61f716846d6.jpg',
+      },
+      {
+        id: '4001594',
+        name: '日式黑陶功夫茶组双侧把茶具礼盒装',
+        price: '288.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/3346b7b92f9563c7a7e24c7ead883f18.jpg',
+      },
+      {
+        id: '4001009',
+        name: '竹制干泡茶盘正方形沥水茶台品茶盘',
+        price: '109.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/2d942d6bc94f1e230763e1a5a3b379e1.png',
+      },
+      {
+        id: '4001874',
+        name: '古法温酒汝瓷酒具套装白酒杯莲花温酒器',
+        price: '488.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/44e51622800e4fceb6bee8e616da85fd.png',
+      },
+      {
+        id: '4001649',
+        name: '大师监制龙泉青瓷茶叶罐',
+        price: '139.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/4356c9fc150753775fe56b465314f1eb.png',
+      },
+      {
+        id: '3997185',
+        name: '与众不同的口感汝瓷白酒杯套组1壶4杯',
+        price: '108.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/8e21c794dfd3a4e8573273ddae50bce2.jpg',
+      },
+      {
+        id: '3997403',
+        name: '手工吹制更厚实白酒杯壶套装6壶6杯',
+        price: '99.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/af2371a65f60bce152a61fc22745ff3f.jpg',
+      },
+      {
+        id: '3998274',
+        name: '德国百年工艺高端水晶玻璃红酒杯2支装',
+        price: '139.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/8896b897b3ec6639bbd1134d66b9715c.jpg',
+      },
+    ]
+
+    // // 字符串拼接  声明一个字符串变量
+    // let str = ''
+
+    // // 2.遍历数据
+    // goodsList.forEach(item => {
+    //   const { picture, name, price } = item
+    //   str += `
+    //   <div class="item">
+    //   <img src="${picture}" alt="">
+    //   <p class="name">${name}</p>
+    //   <p class="price">${price}</p>
+    // </div>
+    // `
+    // })
+
+    // // 3.把生成的字符串  添加给list
+    // document.querySelector('.list').innerHTML = str
+
+
+    // 方法2:map方式渲染
+    const list = document.querySelector('.list')
+    // map方法返回一个数组,同时map一般要写return
+    const res = goodsList.map(({ picture, name, price }) => {
+      return `
+      <div class="item">
+      <img src="${picture}" alt="">
+      <p class="name">${name}</p>
+      <p class="price">${price}</p>
+    </div>
+    `
+    })
+
+    // 数组转换成字符串    arr.join('')
+    list.innerHTML = res.join('')
+  </script>
+</body>
+
+</html>
+```
+
+## 四、综合案例(商品列表价格筛选)
+
+![image-20220808202053485](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808202053485.png)
+
+### 1.Filer()
+
+![image-20220808202107165](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808202107165.png)
+
+![image-20220808202116634](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808202116634.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Array.filter()  filter 筛选,过滤的意思
+        // 创建一个新的数组, 新数组的元素是 通过筛选后的元素
+
+        // filter() 接收一个函数作为参数, 一般需要写return 返回true或者false
+        // true: 表示通过测试, 保留当前元素, false, 不保留;
+
+        // 函数的第一个参数  当前处理的元素  item
+        // 函数的第二个参数  当前处理的元素的索引号 index, 可选
+
+        // 返回值, 一个新的数组, 由通过测试的元素组成.
+
+        const arr = [10, 20, 30, 40]
+
+        const newArr = arr.filter(function(item){
+            console.log(item)
+            return item >= 20 
+        })
+        console.log(arr)
+        console.log(newArr)
+
+        // 改写成箭头函数
+        const newArr2 = arr.filter(x => x > 10)
+        console.log(newArr2)
+
+
+    </script>
+</body>
+</html>
+```
+
+### 2.案例实战
+
+![image-20220808202150528](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808202150528.png)
+
+![image-20220808202159485](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808202159485.png)
+
+![image-20220808202207431](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808202207431.png)
+
+![image-20220808202215019](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808202215019.png)
+
+```html
+<body>
+  <div class="filter">
+    <a data-index="1" href="javascript:;">0-100元</a>
+    <a data-index="2" href="javascript:;">100-300元</a>
+    <a data-index="3" href="javascript:;">300元以上</a>
+    <a href="javascript:;">全部区间</a>
+  </div>
+  <div class="list">
+    <!-- <div class="item">
+      <img src="" alt="">
+      <p class="name"></p>
+      <p class="price"></p>
+    </div> -->
+  </div>
+  <script>
+    // 2. 初始化数据
+    const goodsList = [
+      {
+        id: '4001172',
+        name: '称心如意手摇咖啡磨豆机咖啡豆研磨机',
+        price: '289.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/84a59ff9c58a77032564e61f716846d6.jpg',
+      },
+      {
+        id: '4001594',
+        name: '日式黑陶功夫茶组双侧把茶具礼盒装',
+        price: '288.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/3346b7b92f9563c7a7e24c7ead883f18.jpg',
+      },
+      {
+        id: '4001009',
+        name: '竹制干泡茶盘正方形沥水茶台品茶盘',
+        price: '109.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/2d942d6bc94f1e230763e1a5a3b379e1.png',
+      },
+      {
+        id: '4001874',
+        name: '古法温酒汝瓷酒具套装白酒杯莲花温酒器',
+        price: '488.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/44e51622800e4fceb6bee8e616da85fd.png',
+      },
+      {
+        id: '4001649',
+        name: '大师监制龙泉青瓷茶叶罐',
+        price: '139.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/4356c9fc150753775fe56b465314f1eb.png',
+      },
+      {
+        id: '3997185',
+        name: '与众不同的口感汝瓷白酒杯套组1壶4杯',
+        price: '108.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/8e21c794dfd3a4e8573273ddae50bce2.jpg',
+      },
+      {
+        id: '3997403',
+        name: '手工吹制更厚实白酒杯壶套装6壶6杯',
+        price: '99.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/af2371a65f60bce152a61fc22745ff3f.jpg',
+      },
+      {
+        id: '3998274',
+        name: '德国百年工艺高端水晶玻璃红酒杯2支装',
+        price: '139.00',
+        picture: 'https://yanxuan-item.nosdn.127.net/8896b897b3ec6639bbd1134d66b9715c.jpg',
+      },
+    ]
+
+    // 1.封装一个render函数
+
+    function render(arr) {
+      let str = ''
+      // 1.forEach  字符串拼接
+      arr.forEach(item => {
+        const { name, price, picture } = item
+        str += `<div class="item">
+      <img src="${picture}" alt="">
+      <p class="name">${name}</p>
+      <p class="price">${price}</p>
+    </div>`
+      })
+      document.querySelector('.list').innerHTML = str
+
+      // 2.map 数组转字符串
+      //   const res = arr.map(item => {
+      //     const { name, price, picture } = item
+      //     return `<div class="item">
+      //   <img src="${picture}" alt="">
+      //   <p class="name">${name}</p>
+      //   <p class="price">${price}</p>
+      // </div>`
+      //   })
+      //   document.querySelector('.list').innerHTML=res.join('')
+
+      // 渲染
+    }
+
+    render(goodsList)
+
+
+    // 绑定点击事件
+    const filter = document.querySelector('.filter')
+    filter.addEventListener('click', function (e) {
+      // e.target.tagName  判断点击的是a标签
+      // e.target.dataset.index   判断点击的哪个a标签
+      console.dir(e.target)  //dir  打印一个对象的所有属性和方法
+      const { tagName, dataset } = e.target
+      if (tagName === 'A') {
+
+        let arr = []
+
+        // 1.  if else 方法
+        // if (dataset.index == '1') {
+        //   arr = goodsList.filter(item => item.price > 0 && item.price <= 100)
+        // } else if (dataset.index == '2') {
+        //   arr = goodsList.filter(item => item.price > 100 && item.price <= 300)
+        // } else if (dataset.index == '3') {
+        //   arr = goodsList.filter(item => item.price > 300)
+        // } else {
+        //   arr = goodsList
+        // }
+
+
+        // 2. switch 方法
+        switch (dataset.index) {
+          case'1':
+            arr = goodsList.filter(item => item.price > 0 && item.price <= 100)
+            break;
+          case '2':
+            arr = goodsList.filter(item => item.price > 100 && item.price <= 300)
+            break;
+          case '3':
+            arr = goodsList.filter(item => item.price > 300)
+            break;
+          default:
+            arr = goodsList
+            break;
+        }
+        // 渲染页面
+        render(arr)
+      }
+    })
+  </script>
+</body>
+```
+
+## 五、作业
+
+ PC端地址： https://ks.wjx.top/vj/wOeHuEk.aspx
+
+![image-20220808202329907](JavaScript%E9%AB%98%E7%BA%A7%E7%AC%AC%E4%B8%80%E5%A4%A9%E4%BD%9C%E7%94%A8%E5%9F%9F&%E8%A7%A3%E6%9E%84&%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0.assets/image-20220808202329907.png)
