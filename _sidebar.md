@@ -17,7 +17,7 @@
 
 - Echarts
   - [Day01](./Work/Echarts/01%20%E7%AC%94%E8%AE%B0/01-echarts.md)
-  - [Day02]
+  - Day02
     - [Day02-1](./Work/Echarts/02%20笔记/01%20Github访问.md)
     - [Day02-2](./Work/Echarts/02%20%E7%AC%94%E8%AE%B0/02%20%E7%BD%91%E7%BB%9C%E5%90%8D%E8%AF%8D%20DNS%E8%A7%A3%E6%9E%90%E7%AD%89.md)
     - [Day02-3](./Work/Echarts/02%20%E7%AC%94%E8%AE%B0/02-echarts.md)
