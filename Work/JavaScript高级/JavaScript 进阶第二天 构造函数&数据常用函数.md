@@ -6,7 +6,7 @@
 
 #### 1.1利用对象字面量创建对象
 
-![image-20220809175727175](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809175727175.png)
+![image-20220809175727175](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809175727175.png)
 
 ```html
 <!DOCTYPE html>
@@ -53,7 +53,7 @@
 
 #### 1.2利用 new Object 创建对象
 
-![image-20220809175802436](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809175802436.png)
+![image-20220809175802436](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809175802436.png)
 
 ```html
 <!DOCTYPE html>
@@ -140,7 +140,7 @@
 * 构造函数 ：是一种特殊的函数，主要用来初始化对象
 *  使用场景：常规的 {...} 语法允许创建一个对象。比如我们创建了佩奇的对象，继续创建乔治的对象还需要重新写一 遍，此时可以通过构造函数来快速创建多个类似的对象。
 
-![image-20220809180000294](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809180000294.png)
+![image-20220809180000294](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809180000294.png)
 
 #### 2.2构造函数的两个约定
 
@@ -151,11 +151,11 @@
 1. 它们的命名以大写字母开头。 
 2.  它们只能由 "new" 操作符来执行。
 
-![image-20220809180247665](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809180247665.png)
+![image-20220809180247665](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809180247665.png)
 
 
 
-![image-20220809180443724](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809180443724.png)
+![image-20220809180443724](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809180443724.png)
 
 ```html
 <!DOCTYPE html>
@@ -233,7 +233,7 @@
 
 #### 2.4练习(利用构造函数创建多个对象)
 
-![image-20220809180722900](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809180722900.png)
+![image-20220809180722900](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809180722900.png)
 
 ```html
 <!DOCTYPE html>
@@ -310,11 +310,11 @@
 
 #### 3.1实例成员
 
-![image-20220809181047394](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809181047394.png)
+![image-20220809181047394](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809181047394.png)
 
 #### 3.2静态成员
 
-![image-20220809182510489](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809182510489.png)
+![image-20220809182510489](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809182510489.png)
 
 ```html
 <!DOCTYPE html>
@@ -377,9 +377,9 @@
 
 ### 1.数据类型
 
-![image-20220809182920202](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809182920202.png)
+![image-20220809182920202](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809182920202.png)
 
-![image-20220809182930155](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220809182930155.png)
+![image-20220809182930155](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220809182930155.png)
 
 ```html
 <!DOCTYPE html>
@@ -416,7 +416,7 @@
 
 ### 2.Object
 
-![image-20220810150015991](D:\Program Files (x86)\blog\docs\Work\JavaScript高级\JavaScript 进阶第二天 构造函数&数据常用函数.assets/image-20220810150015991.png)
+![image-20220810150015991](JavaScript%20%E8%BF%9B%E9%98%B6%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0&%E6%95%B0%E6%8D%AE%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0.assets/image-20220810150015991.png)
 
 #### 2.1Object.keys 静态方法获取对象中所有属性（键）
 
