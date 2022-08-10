@@ -8,7 +8,7 @@
 
 ### 1. 实例化
 
-![image-20220726104206629](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726104206629.png)
+![image-20220809194816505](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220809173359875.png)
 
 ```html
 <!DOCTYPE html>
@@ -47,7 +47,7 @@
 
 ### 2.日期对象方法
 
-![image-20220726104400922](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726104400922.png)
+![image-20220726104400922](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726104400922.png)
 
 ```html
 <!DOCTYPE html>
@@ -79,7 +79,9 @@
 
 ```
 
-#### 2.1案例![image-20220726104442433](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726104442433.png)
+#### 2.1案例
+
+![image-20220726104442433](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726104442433.png)
 
 ```html
 <!DOCTYPE html>
@@ -185,7 +187,7 @@
 
 #### 3.1获取时间戳方式
 
-![image-20220726104839115](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726104839115.png)
+![image-20220726104839115](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726104839115.png)
 
 ```html
 <!DOCTYPE html>
@@ -235,11 +237,11 @@
 
 ### 4.总结
 
-![image-20220726104927161](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726104927161.png)
+![image-20220726104927161](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726104927161.png)
 
 ### 5.案例
 
-![image-20220726104947888](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726104947888.png)
+![image-20220726104947888](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726104947888.png)
 
 ```html
 <!DOCTYPE html>
@@ -391,7 +393,7 @@
     *  所有的文本 
     *  其他
 
-![image-20220726105145404](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726105145404.png)
+![image-20220726105145404](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726105145404.png)
 
 #### 1.2总结
 
@@ -409,11 +411,11 @@
 
 ### 2.查找节点
 
-![image-20220726105614584](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726105614584.png)
+![image-20220726105614584](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726105614584.png)
 
 #### 2.1父节点查找
 
-![image-20220726105635369](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726105635369.png)
+![image-20220726105635369](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726105635369.png)
 
 ```html
 <!DOCTYPE html>
@@ -448,7 +450,7 @@
 
 ##### 2.1.1案例
 
-![image-20220726105719011](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726105719011.png)
+![image-20220726105719011](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726105719011.png)
 
 ```html
 <!DOCTYPE html>
@@ -541,13 +543,13 @@
 
 #### 2.2子节点查找
 
-![image-20220726105814422](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726105814422.png)
+![image-20220726105814422](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726105814422.png)
 
 
 
 #### 2.3兄弟关系查找
 
-![image-20220726105850120](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726105850120.png)
+![image-20220726105850120](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726105850120.png)
 
 ```html
 <!DOCTYPE html>
@@ -625,11 +627,11 @@
 
 #### 3.1.创建节点
 
-![image-20220726110258515](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726110258515.png)
+![image-20220726110258515](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726110258515.png)
 
 #### 3.2追加节点
 
-![image-20220726110335713](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726110335713.png)
+![image-20220726110335713](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726110335713.png)
 
 ```HTML
 <!DOCTYPE html>
@@ -671,7 +673,7 @@
 
 #### 3.3案例
 
-![image-20220726110449232](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726110449232.png)
+![image-20220726110449232](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726110449232.png)
 
 ```html
 <!DOCTYPE html>
@@ -769,7 +771,7 @@
 
 #### 3.4 增加节点
 
-![image-20220726110549678](C:/Users/fortu/AppData/Roaming/Typora/typora-user-images/image-20220726110549678.png)
+![image-20220726110549678](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726110549678.png)
 
 ```html
 <!DOCTYPE html>
@@ -816,7 +818,7 @@
 
 ### 4.删除节点
 
-![image-20220726110715688](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726110715688.png)
+![image-20220726110715688](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220726110715688-16601122041291.png)
 
 ```html
 <!DOCTYPE html>
@@ -877,7 +879,7 @@
 
 ## 三、M端事件
 
-![image-20220727160104632](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220727160104632.png)
+![image-20220727160104632](Web%20APIs%20%E7%AC%AC%E5%9B%9B%E5%A4%A9%20Dom%E8%8A%82%E7%82%B9&%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%BB%91%E5%8A%A8.assets/image-20220727160104632-16601122082692.png)
 
 ```html
 <!DOCTYPE html>

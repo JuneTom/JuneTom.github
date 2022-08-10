@@ -4,7 +4,9 @@
 
 ### 1.1 赋值运算符
 
-![image-20220714210230229](C:/Users/zzyyc/AppData/Roaming/Typora/typora-user-images/image-20220714210230229.png)
+![image-20220809193531267](JavaScript%20%E5%9F%BA%E7%A1%80%E7%AC%AC%E4%BA%8C%E5%A4%A9%20%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6.assets/image-20220809193531267.png)
+
+
 
 ```html
 
