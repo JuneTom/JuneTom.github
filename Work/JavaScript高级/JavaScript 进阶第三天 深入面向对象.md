@@ -859,3 +859,328 @@ console.log(zjl.sex)
 zjl.__proto__ === Star.prototype
 ```
 
+## 五、Test
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 01 
+        // var a;
+        if(false){
+            var a=1;
+            let b=2;
+        }
+        console.log(a); // undefined
+        console.log(b); // Error
+
+        // 1. if 是语句, 不是函数, var 和 {} 不形成作用域.
+        // var 提升到全局
+        // 2. let {} 形成块级作用域, 作用域外不能访问到b变量
+
+
+        // 02 
+        fn(123)
+        var a = 456;
+        function fn(a){
+            console.log(a); // 123
+        }
+
+        // 03
+        var a = 1
+        if (true){
+            console.log(a)      // Error
+            let a = 2
+        }
+        /* 
+            这里 let{} 形成了块级作用域， 必须先声明，后使用
+            暂时性死区： let const 声明的变量， 在声明之前如果使用，会报错
+        */
+    </script>
+</body>
+</html>
+```
+
+## 六、函数声明和变量声明优先级
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function a() {}
+        var a;
+        console.log(a)  // ƒ a() {}
+        console.log(typeof a)  // function
+
+        // 1. 函数声明和变量声明, 函数提升的优先级更高, 当二者同时存在的时候, 会优先指向函数声明.
+        // 2. 函数提升优先级比变量提升要高,  且不会被同名的变量声明覆盖, 但是, 会被变量的赋值给覆盖掉.
+
+        // 02
+        console.log(c) // function c(){}
+        var c;
+        function c(){
+            console.log(c)  // undefined
+            var c = 3
+        }
+        c(2) 
+
+        // 03 
+        var c = 1 
+        function c(){
+            console.log(c)
+            var c = 3
+        }
+        console.log(c)  // 1 
+        c(2)  // Error 
+        // ==== 转换成下面这样
+        function c(){
+            console.log(c)
+            var c = 3
+        }
+        var c;
+        c = 1 // 赋值了 覆盖掉了
+        console.log(c)  // 1 
+        c(2)  // Error
+
+        // 04 
+        console.log(abc)  // function abc
+        var abc;
+        console.log(abc)  // 1 
+        function abc(){
+            console.log(1)
+        }
+
+
+    </script>
+</body>
+</html>
+```
+
+## 七、作用域 this
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name='kaivan';
+        (function () {
+            if(typeof name==='undefined'){
+                var name='chen';
+                console.log(name); // chen
+            }else {
+                console.log(name); //
+            }
+        })();
+
+        // 02 
+        var a=10;
+        function test() {
+            a=100;
+            console.log(a); // 100
+            console.log(this.a); // 10
+            var a;
+            console.log(a); // 100
+        }
+        test();
+
+        // 03 
+        var name='kaivon';
+        var object={
+            name:'chen',
+            getNameFunc:function () {
+                return function () {
+                    return this.name;
+                }
+            }
+        }
+        console.log(object.getNameFunc()())  // kaivon
+        // return ==> function () {return this.name;} ==> window.f()  ==> kaivon
+
+        // 04 闭包.
+        var name='kaivon';
+        var object={
+            name:'chen',
+            getNameFunc:function () {
+                var that = this;
+                return function () {
+                    return that.name;
+                }
+            }
+        }
+        console.log(object.getNameFunc()())
+        console.log((function () {return that.name;})())
+        // 执行第一次调用的时候,this指向的是object, 用that存了object
+        // return ==> function () {return that.name;}
+        // 注意这里, 形成了一个闭包, 
+        // 第二次调用的时候 , that 取的就是object这个对象. object.name ==> chen
+
+        // 05 
+        var a = 666;
+        console.log(++a);  // 667  ++a表达式的值, 是a+1之后的.
+        console.log(a++);  // 667  a++表达式的值, 是加之前的值
+        console.log(a); // 668 
+
+        // 06 
+        var a;
+        var b='undefined';
+        console.log(typeof a);  // undefined
+        console.log(typeof b);  // string
+        console.log(typeof c); //  undefined
+
+        // 07 作用域的知识点!
+        // 函数是加了()才表示调用执行
+        var x = 10;
+        function fn() {
+            console.log(x); // 10
+        }
+        function show(f) {
+            var x=20;
+            f();
+        }
+        show(fn);
+
+        //背下来: 作用域链在定义的时候就确定了, 找定义时候的变量!!!
+
+        // 08  this的指向是执行(调用)的时候确定的.
+        var x=10;
+        var foo={
+            x:90,
+            getX:function () {
+                return this.x;
+            }
+        };
+        console.log(foo.getX()); // 90
+        var xGetter=foo.getX;  // var xGetter = function (){return this.x}
+        console.log(xGetter()); // 10 
+        // window.xGetter() 
+                                                                
+        // 09 
+        (function (x) {
+            // let x = 1
+            return (function (y) {
+                // let y = 2
+                console.log(x);  // 1
+            })(2)
+        })(1);
+
+        // 10
+        var fn = function (){
+            console.log(fn); // function(){console.log(fn)}
+        }
+        fn();
+        var obj = {
+            // 这里没有作用域
+            f2:function(){
+                // 函数作用域, 找 f2
+                console.log(f2);  // Error f2 is not defined
+                // 上层作用域, window里面没有f2 
+            }
+        }
+        obj.f2();
+    </script>
+</body>
+</html>                                                                      
+```
+
+## 八、冒泡排序
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         x// 5 个数, 我们 做了 4 轮排序
+
+        // 第 1 轮(0) , 比较了几次呢 4次
+        // 第 2 轮(1) , 比较 3 次 
+        // 第 3 轮(2) , 比较 2 次
+        // 第 4 轮(3) , 比较 1 次
+
+        // 外层循环 : 控制 比较的轮数(趟数)
+        // 内层循环 : 控制每一轮比较的次数(交换), 交换两个变量
+        // arr.length - 1  4 ;   i  ==> 0 1 2 3 
+        let arr = [5, 1, 4, 2, 8]
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = 0; j < arr.length - 1 - i; j++){
+                // 作比较, 如果前一个数, 比后一个数大; 
+                // 交换两个数的位置
+                if (arr[j] > arr[j + 1]) {
+                    // 交换两个变量
+                    let temp = arr[j]
+                    arr[j] = arr[j + 1]
+                    arr[j + 1] = temp
+                }
+            }
+        }
+
+        console.log(arr)
+
+        // 内层循环 arr.length - 1 - i 
+        // 这里的 - i 怎么理解呢? 
+        // 每次排一轮之后, 我们确定一个 最大的数.
+        // 第 1 轮(0) , 比较了几次呢 4次
+        // 第 2 轮(1) , 比较 3 次 
+        // 第 3 轮(2) , 比较 2 次
+        // 第 4 轮(3) , 比较 1 次
+
+        // 1. 外层循环: 控制比较轮数   : arr.length - 1 数组长度为5, 比较4轮.
+        // 2. 内层循环, 控制每一轮比较的次数.(交换)  : arr.length - 1 - i;
+        // 3. 外层每走一轮, 就确定一个最大的数.
+        // - i 是为了性能更好, 就是每比较一轮之后, 有一个最大的数, 冒泡到最后了
+
+        // 4.注意: 每轮的循环条件, 是小于符号, 不是小于等于.
+
+
+        for (let i = 0; i < arr.length - 1; i++) {
+            for(let j = 0; j < arr.length - 1 - i; j++){
+                // 中间交换变量
+                if (arr[j] > arr[j+1]){
+                    // [a,b] = [b,a]
+                    [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+                }
+            }
+        }
+
+        let arr1 = [ 1, 3, 6, 2, 9, 8]
+        // arr.sort() 底层原理, 就是冒泡排序
+        arr.sort(cbFn) // 接收一个函数 , 函数里面的两个参数, a,b 就表示相互比较的两个数
+        // 如果a > b ==> a - b > 0  ==> 把a冒泡到后面去.
+        // arr.sort(function(a,b){
+        //     return a - b
+        // })
+        arr1.sort((a,b) => a - b)  // 从小到大排序
+        arr1.sort((a,b) => b - a) // 从大到小排序 
+    </script>
+</body>
+</html>
+```
+
+
+
